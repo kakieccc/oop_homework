@@ -30,13 +30,13 @@ public class Teacher extends User{
     public String toString() {
 
         return new StringBuilder()
-        .append("- Teacher\n")
-        .append("  id: ")        .append(getId())     .append('\n')
-        .append("  name: ")      .append(getName())   .append('\n')
-        .append("  phoneNo: ")   .append(getPhoneNo()).append('\n')
-        .append("  email: ")     .append(getEmail())  .append('\n')
-        .append("  teacherNo: ") .append(teacherNo)   .append('\n')
-        .append("  department: ").append(department)  .append('\n')
+        .append("Teacher\n")
+        .append("\nid: ").append(getId())     
+        .append("\nname: ").append(getName())   
+        .append("\nphoneNo: ").append(getPhoneNo())
+        .append("\nemail: ").append(getEmail())  
+        .append("\nteacherNo: ").append(teacherNo)  
+        .append("\ndepartment: ").append(department) 
         .toString();
     }
 }

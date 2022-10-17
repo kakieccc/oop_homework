@@ -23,9 +23,9 @@ public class ActivitySubSystem {
 
     public void removeActivityById(String id) {
         
-        for(Activity activity : activityList) {
-            if(id.equals(activity.getId())) {
-                activityList.remove(activity);
+        for(int i = 0; i < activityList.size(); i++) {
+            if(activityList.get(i).getId() == id) {
+                activityList.remove(i);
             }
         }
     }

@@ -11,7 +11,15 @@ public class Student extends User{
     private String department;
     private List<Team> teamList;
 
-    public Student(String initialId, String initialName, String initialPhoneNo, String initialEmail, String initialStudentNo, boolean initialGender, String initialGrade, String initialDepartment) {
+    public Student(
+        String initialId, 
+        String initialName, 
+        String initialPhoneNo, 
+        String initialEmail, 
+        String initialStudentNo, 
+        boolean initialGender, 
+        String initialGrade, 
+        String initialDepartment) {
         super(initialId, initialName, initialPhoneNo, initialEmail);
         this.studentNo = initialStudentNo;
         this.gender = initialGender;
@@ -48,15 +56,14 @@ public class Student extends User{
     public String toString() {
 
         return new StringBuilder()
-        .append("- Student\n")
-        .append("  id: ")        .append(getId())                   .append('\n')
-        .append("  name: ")      .append(getName())                 .append('\n')
-        .append("  phoneNo: ")   .append(getPhoneNo())              .append('\n')
-        .append("  email: ")     .append(getEmail())                .append('\n')
-        .append("  studentNo: ") .append(studentNo)                 .append('\n')
-        .append("  gender: ")    .append(gender ? "Female" : "Male").append('\n')
-        .append("  grade: ")     .append(grade)                     .append('\n')
-        .append("  department: ").append(department)                .append('\n')
+        .append("\nid: ").append(getId())
+        .append("\nname: ").append(getName())
+        .append("\nphoneNo: ").append(getPhoneNo())
+        .append("\nemail: ").append(getEmail())
+        .append("\nstudentNo: ").append(studentNo)            
+        .append("\ngender: ").append(gender ? "Female" : "Male")
+        .append("\ngrade: ").append(grade)                 
+        .append("\ndepartment: ").append(department)               
         .toString();
     }
 }

@@ -46,11 +46,10 @@ public class Team {
     public String toString() {
 
         return new StringBuilder()
-        .append("- Team\n")
-        .append("  teamId: ")    .append(teamId)           .append('\n')
-        .append("  teamName: ")  .append(teamName)         .append('\n')
-        .append("  department: ").append(department)       .append('\n')
-        .append("  creator: ")   .append(creator.getName()).append('\n')
+        .append("Team\n").append('\n')
+        .append("\nteamName: ").append(teamName)         
+        .append("\ndepartment: ").append(department)      
+        .append("\ncreator: ").append(creator.getName())
         .toString();
     }
 

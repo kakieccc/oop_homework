@@ -2,73 +2,125 @@ package homework2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserSubSystem {
+
   private List<User> userList;
 
   public UserSubSystem() {
+
     this.userList = new ArrayList<User>();
   }
 
   public void addStudent(Student student) {
+
     userList.add(student);
   }
+
   public void removeStudentById(String id) {
-    userList.removeIf(student -> student.getId().equals(id));
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Student) {
+        userList.remove(i);
+      }
+    }
   }
+
   public Student getStudentById(String id) {
-    return (Student)userList.stream()
-      .filter(student -> student.getId().equals(id))
-      .findFirst()
-      .orElse(null);
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Student) {
+        return (Student)userList.get(i);
+      }
+    }
+    return null;
   }
+
   public List<Student> getStudentList() {
-    return userList.stream()
-      .filter(user -> user instanceof Student)
-      .map(user -> (Student)user)
-      .collect(Collectors.toList());
+    List<Student> stuList = new ArrayList<Student>();
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i) instanceof Student) {
+        stuList.add((Student) userList.get(i));
+        return stuList;
+      }
+    }
+    return null;
   }
 
   public void addOrganizer(Organizer organizer) {
+
     userList.add(organizer);
   }
+
   public void removeOrganizerById(String id) {
-    userList.removeIf(organizer -> organizer.getId().equals(id));
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Organizer) {
+        userList.remove(i);
+      }
+    }
   }
+
   public Organizer getOrganizerById(String id) {
-    return (Organizer)userList.stream()
-      .filter(organizer -> organizer.getId().equals(id))
-      .findFirst()
-      .orElse(null);
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Organizer) {
+        return (Organizer)userList.get(i);
+      }
+    }
+    return null;
   }
+
   public List<Organizer> getOrganizerList() {
-    return userList.stream()
-      .filter(user -> user instanceof Organizer)
-      .map(user -> (Organizer)user)
-      .collect(Collectors.toList());
+
+    List<Organizer> orgList = new ArrayList<Organizer>();
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i) instanceof Organizer) {
+        orgList.add((Organizer) userList.get(i));
+        return orgList;
+      }
+    }
+    return null;
   }
 
   public void addTeacher(Teacher teacher) {
+
     userList.add(teacher);
   }
+
   public void removeTeacherById(String id) {
-    userList.removeIf(teacher -> teacher.getId().equals(id));
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Teacher) {
+        userList.remove(i);
+      }
+    }
   }
+
   public Teacher getTeacherById(String id) {
-    return (Teacher)userList.stream()
-      .filter(teacher -> teacher.getId().equals(id))
-      .findFirst()
-      .orElse(null);
+
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i).getId() == id && userList.get(i) instanceof Teacher) {
+        return (Teacher)userList.get(i);
+      }
+    }
+    return null;
   }
+
   public List<Teacher> getTeacherList() {
-    return userList.stream()
-      .filter(user -> user instanceof Teacher)
-      .map(user -> (Teacher)user)
-      .collect(Collectors.toList());
+
+    List<Teacher> teaList = new ArrayList<Teacher>();
+    for(int i = 0; i < userList.size(); i++) {
+      if(userList.get(i) instanceof Teacher) {
+        teaList.add((Teacher) userList.get(i));
+        return teaList;
+      }
+    }
+    return null;
   }
 
   public void createTeam(
+
     String creatorId,
     String teamId,
     String teamName,
@@ -81,6 +133,7 @@ public class UserSubSystem {
 
     creator.getTeamList().add(newTeam);
   }
+
   public void addStudentToTeam(String creatorId, String studentId, String teamId) {
     Student creator = getStudentById(creatorId);
 
@@ -94,6 +147,7 @@ public class UserSubSystem {
       team.addStudent(student);
     }
   }
+
   public void addTeacherToTeam(String creatorId, String teacherId, String teamId) {
     Student creator = getStudentById(creatorId);
 

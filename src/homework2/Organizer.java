@@ -4,7 +4,12 @@ public class Organizer extends User{
 
     private String unit;
 
-    public Organizer(String initialId, String initialName, String initialPhoneNo, String initialEmail, String initialUnit) {
+    public Organizer(
+        String initialId, 
+        String initialName, 
+        String initialPhoneNo, 
+        String initialEmail, 
+        String initialUnit) {
         super(initialId, initialName, initialPhoneNo, initialEmail);
         this.unit = initialUnit;
     }
@@ -17,12 +22,12 @@ public class Organizer extends User{
     public String toString() {
 
         return new StringBuilder()
-        .append("- Organizer\n")
-        .append("  id: ")     .append(getId())     .append('\n')
-        .append("  name: ")   .append(getName())   .append('\n')
-        .append("  phoneNo: ").append(getPhoneNo()).append('\n')
-        .append("  email: ")  .append(getEmail())  .append('\n')
-        .append("  unit: ")   .append(unit)        .append('\n')
+        .append("Organizer\n")
+        .append("\nid: ").append(getId())     
+        .append("\nname: ").append(getName())   
+        .append("\nphoneNo: ").append(getPhoneNo())
+        .append("\nemail: ").append(getEmail()) 
+        .append("\nunit: ").append(unit)
         .toString();
     
     }

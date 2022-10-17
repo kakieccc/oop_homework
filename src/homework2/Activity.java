@@ -18,7 +18,13 @@ public class Activity {
     private List<Teacher> teacherList;
     private List<Organizer> organizerList;
 
-    public Activity(String initialId, String initialName, Date initialStartTime, Date initialEndTime, String initialDescription, String initialSite) {
+    public Activity(
+        String initialId, 
+        String initialName, 
+        Date initialStartTime, 
+        Date initialEndTime, 
+        String initialDescription, 
+        String initialSite) {
         
         this.id = initialId;
         this.name = initialName;
@@ -73,9 +79,9 @@ public class Activity {
 
     public void removeTeamFromActivity(String id) {
 
-        for(Team team : teamList) {
-            if(id.equals(team.getTeamId())) {
-                teamList.remove(team);
+        for(int i = 0; i < teamList.size(); i++) {
+            if(teamList.get(i).getTeamId() == id) {
+                teamList.remove(i);
             }
         }
     }
@@ -87,9 +93,9 @@ public class Activity {
 
     public void removeTeacherFromActivity(String id) {
         
-        for(Teacher teacher : teacherList) {
-            if(id.equals(teacher.getId())) {
-                teacherList.remove(teacher);
+        for(int i = 0; i < teacherList.size(); i++) {
+            if(teacherList.get(i).getId() == id) {
+                teacherList.remove(i);
             }
         }
     }
@@ -101,9 +107,9 @@ public class Activity {
 
     public void removeOrganizerFromActivity(String id) {
         
-        for(Organizer organizer : organizerList) {
-            if(id.equals(organizer.getId())) {
-                organizerList.remove(organizer);
+        for(int i = 0; i < organizerList.size(); i++) {
+            if(organizerList.get(i).getId() == id) {
+                organizerList.remove(i);
             }
         }
     }
@@ -111,13 +117,12 @@ public class Activity {
     public String toString() {
 
         return new StringBuilder()
-        .append("- Activity\n")
-        .append("  id: ")         .append(id)         .append('\n')
-        .append("  name: ")       .append(name)       .append('\n')
-        .append("  startTime: ")  .append(startTime)  .append('\n')
-        .append("  endTime: ")    .append(endTime)    .append('\n')
-        .append("  description: ").append(description).append('\n')
-        .append("  site: ")       .append(site)       .append('\n')
+        .append("id: ").append(id)         
+        .append("\nname: ").append(name)       
+        .append("\nstartTime: ").append(startTime)  
+        .append("\nendTime: ").append(endTime)    
+        .append("\ndescription: ").append(description)
+        .append("\nsite: ").append(site)       
         .toString();
     }
 

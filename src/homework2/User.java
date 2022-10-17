@@ -50,11 +50,11 @@ public class User {
     public String toString() {
         
         return new StringBuilder()
-        .append("- User\n")
-        .append("  id: ")     .append(id)     .append('\n')
-        .append("  name: ")   .append(name)   .append('\n')
-        .append("  phoneNo: ").append(phoneNo).append('\n')
-        .append("  email: ")  .append(email)  .append('\n')
+        .append("User\n")
+        .append("\nid: ").append(id)     
+        .append("\nname: ").append(name)  
+        .append("\nphoneNo: ").append(phoneNo)
+        .append("\nemail: ").append(email) 
         .toString();
     }
 

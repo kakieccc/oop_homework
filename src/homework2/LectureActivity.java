@@ -6,7 +6,14 @@ public class LectureActivity extends Activity{
 
     private String keySpeaker;
 
-    public LectureActivity(String initialId, String initialName, Date initialStartTime, Date initialEndTime, String initialDescription, String initialSite, String initialKeySpeaker) {
+    public LectureActivity(
+        String initialId, 
+        String initialName,
+        Date initialStartTime,
+        Date initialEndTime,
+        String initialDescription,
+        String initialSite,
+        String initialKeySpeaker) {
         
         super(initialId, initialName, initialStartTime, initialEndTime, initialDescription, initialSite);
         this.keySpeaker = initialKeySpeaker;
@@ -20,14 +27,14 @@ public class LectureActivity extends Activity{
     public String toString() {
 
         return new StringBuilder()
-        .append("- LectureActivity\n")
-        .append("  id: ")         .append(getId())         .append('\n')
-        .append("  name: ")       .append(getName())       .append('\n')
-        .append("  startTime: ")  .append(getStartTime())  .append('\n')
-        .append("  endTime: ")    .append(getEndTime())    .append('\n')
-        .append("  description: ").append(getDescription()).append('\n')
-        .append("  site: ")       .append(getSite())       .append('\n')
-        .append("  keySpeaker: ") .append(keySpeaker)      .append('\n')
+        .append("LectureActivity\n")
+        .append("\nid: ").append(getId())        
+        .append("\nname: ").append(getName())       
+        .append("\nstartTime: ").append(getStartTime())  
+        .append("\nendTime: ").append(getEndTime())    
+        .append("\ndescription: ").append(getDescription())
+        .append("\nsite: ").append(getSite())       
+        .append("\nkeySpeaker: ").append(keySpeaker)     
         .toString();
     }
 }
